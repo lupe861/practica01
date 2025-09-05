@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Mi Sitio{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-blue-600 text-white p-4">
+        <nav class="container mx-auto flex justify-between">
+            <a href="{% url 'index' %}" class="font-bold text-lg">Inicio</a>
+            <div class="space-x-4">
+                <a href="{% url 'about' %}" class="hover:underline">Acerca de</a>
+                <a href="{% url 'contact' %}" class="hover:underline">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-6">
+        {% block contenido %}{% endblock %}
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-6">
+        © 2025 Mi Sitio
+    </footer>
+
+</body>
+</html>
